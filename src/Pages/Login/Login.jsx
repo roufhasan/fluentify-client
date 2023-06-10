@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-white md:bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] min-h-screen flex flex-col justify-center py-[1%]">
+    <div className="bg-white md:bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] min-h-screen flex flex-col justify-center py-28">
       <div className="card-body bg-white w-full md:w-1/2 mx-auto rounded-md">
         <h2 className="text-3xl text-center font-medium border-b-2 border-[#4e54c8] pb-4">
           Sign In
