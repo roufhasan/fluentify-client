@@ -17,6 +17,7 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result);
+        navigate("/");
       })
       .catch((error) => {
         if (error.message == "Firebase: Error (auth/user-not-found).") {
@@ -43,7 +44,9 @@ const Login = () => {
   return (
     <div className="bg-white md:bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] min-h-screen flex flex-col justify-center py-[1%]">
       <div className="card-body bg-white w-full md:w-1/2 mx-auto rounded-md">
-        <h2 className="text-3xl text-center font-medium">Sign In</h2>
+        <h2 className="text-3xl text-center font-medium border-b-2 border-[#4e54c8] pb-4">
+          Sign In
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <label className="label">
@@ -55,10 +58,10 @@ const Login = () => {
               name="email"
               {...register("email")}
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
           </div>
-          <div className="form-control">
+          <div className="form-control my-8">
             <label className="label">
               <span className="text-lg font-medium">Password</span>
             </label>
@@ -69,7 +72,7 @@ const Login = () => {
                 name="password"
                 {...register("password")}
                 required
-                className="w-full pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+                className="w-full pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
               />
               {showPassword ? (
                 <FaEyeSlash
@@ -93,7 +96,7 @@ const Login = () => {
             <input
               type="submit"
               value="Log In"
-              className="btn bg-blue-500 border-0 hover:bg-yellow-400 hover:text-black"
+              className="btn bg-gradient-to-r from-[#4b6cb7] to-[#182848] border-0 text-white"
             />
           </div>
         </form>

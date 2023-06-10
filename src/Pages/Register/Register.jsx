@@ -51,7 +51,9 @@ const Register = () => {
   return (
     <div className="bg-white md:bg-gradient-to-r from-[#4e54c8] to-[#8f94fb] min-h-screen flex flex-col justify-center py-[1%]">
       <div className="card-body bg-white w-full md:w-1/2 mx-auto rounded-md">
-        <h2 className="text-3xl text-center font-medium">Sign Up</h2>
+        <h2 className="text-3xl text-center font-medium border-b-2 border-[#4e54c8] pb-4">
+          Sign Up
+        </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <label className="label">
@@ -63,7 +65,7 @@ const Register = () => {
               {...register("name")}
               placeholder="Name"
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
           </div>
           <div className="form-control">
@@ -76,7 +78,7 @@ const Register = () => {
               {...register("email")}
               placeholder="Email"
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
           </div>
           <div className="form-control">
@@ -93,7 +95,7 @@ const Register = () => {
               })}
               placeholder="Password"
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
             {errors.password?.type === "minLength" && (
               <p className="text-red-400">
@@ -116,7 +118,7 @@ const Register = () => {
               {...register("confirmPassword")}
               placeholder="Confirm Password"
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
             <p className="text-red-500 my-2">
               <small>{error}</small>
@@ -132,14 +134,14 @@ const Register = () => {
               {...register("photoURL")}
               placeholder="photoURL"
               required
-              className="pl-4 h-12 focus:outline-blue-500  border-gray-600 border rounded"
+              className="pl-4 h-12 focus:outline-[#4e54c8]  border-gray-600 border-b"
             />
           </div>
           <div className="form-control mt-6">
             <input
               type="submit"
               value="Sign Up"
-              className="btn bg-blue-500 border-0 hover:bg-yellow-400 hover:text-black"
+              className="btn border-0 bg-gradient-to-r from-[#4b6cb7] to-[#182848] text-white"
             />
           </div>
         </form>
