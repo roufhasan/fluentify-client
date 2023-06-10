@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
-import porfileImg from "../../../assets/profile.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const navOptions = (
     <>
       <li>
@@ -31,11 +40,30 @@ const Navbar = () => {
       <li>
         <Link
           to="/dashboard"
-          className="text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          className="text-lg font-medium hover:bg-white hover:text-[#5754f7] lg:mr-12"
         >
           Dashboard
         </Link>
       </li>
+      {user ? (
+        <>
+          <button
+            onClick={handleLogOut}
+            className="border-2 border-black px-4 py-1 rounded-md text-base font-semibold hover:bg-[#111F62] hover:text-white bg-[transparent] text-[black] transition-all"
+          >
+            Log Out
+          </button>
+        </>
+      ) : (
+        <>
+          <Link
+            to="/login"
+            className="border-2 border-black px-4 py-1 rounded-md text-base font-semibold hover:bg-[#111F62] hover:text-white bg-[transparent] text-[black] transition-all"
+          >
+            Login
+          </Link>
+        </>
+      )}
     </>
   );
   return (
@@ -72,19 +100,23 @@ const Navbar = () => {
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
         <div>
-          <img
-            src={porfileImg}
-            alt=""
-            className="w-12 h-12 rounded object-cover"
-          />
+          {user && (
+            <img
+              src={user.photoURL}
+              alt=""
+              className="w-12 h-12 rounded object-cover ml-4"
+            />
+          )}
         </div>
       </div>
       <div className="navbar-end lg:hidden">
-        <img
-          src={porfileImg}
-          alt=""
-          className="w-12 h-12 rounded object-cover"
-        />
+        {user && (
+          <img
+            src={user.photoURL}
+            alt=""
+            className="w-12 h-12 rounded object-cover ml-4"
+          />
+        )}
       </div>
     </div>
   );

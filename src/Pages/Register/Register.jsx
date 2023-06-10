@@ -1,26 +1,51 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile, signInWithGoogle } =
+    useContext(AuthContext);
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
   const [error, setError] = useState("");
 
   const onSubmit = (data) => {
     if (data.password !== data.confirmPassword) {
       return setError("Password Didn't Matched");
     }
-    createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
-    });
+    createUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        updateUserProfile(data.name, data.photoURL)
+          .then(() => {
+            console.log("user profile image added");
+            reset();
+            navigate("/");
+          })
+          .catch((error) => console.log(error));
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleGoogleLogin = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate("/");
+      })
+      .catch((errror) => {
+        setError(errror);
+      });
   };
 
   return (
@@ -122,7 +147,13 @@ const Register = () => {
           <p className="text-red-500 text-center">
             <small></small>
           </p>
-          <div className="divider mt-6">OR</div>
+          <div className="divider my-6">OR</div>
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full flex items-center justify-center gap-2 bg-[#e75447] hover:bg-[#ea4335] text-white py-2 px-8 rounded mt-6"
+          >
+            <FaGoogle></FaGoogle> Log In With Google
+          </button>
         </div>
         <div className="text-center mt-4">
           <p>
