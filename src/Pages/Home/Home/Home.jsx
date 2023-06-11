@@ -1,3 +1,4 @@
+import Blog from "../Blog/Blog";
 import PopularClasse from "../PopularClasses/PopularClasse";
 import PopularInstructor from "../PopularInstructor/PopularInstructor";
 import TopSlider from "../TopSlider/TopSlider";
@@ -8,6 +9,7 @@ const Home = () => {
       <TopSlider></TopSlider>
       <PopularClasse></PopularClasse>
       <PopularInstructor></PopularInstructor>
+      <Blog></Blog>
     </div>
   );
 };
