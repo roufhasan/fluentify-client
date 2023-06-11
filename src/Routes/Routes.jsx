@@ -4,6 +4,8 @@ import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
+import Dashboard from "../Layout/Dashboard";
+import SelectedClass from "../Pages/Dashboard/SelectedClass/SelectedClass";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +24,16 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard></Dashboard>,
+    children: [
+      {
+        path: "selectedClass",
+        element: <SelectedClass></SelectedClass>,
       },
     ],
   },

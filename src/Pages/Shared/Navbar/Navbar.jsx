@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 
@@ -14,39 +14,55 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li>
-        <Link
+        <NavLink
           to="/"
-          className="text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          className={({ isActive }) =>
+            isActive
+              ? "text-lg font-bold hover:bg-white text-[#5754f7]"
+              : "text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          }
         >
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           to="/instructors"
-          className="text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          className={({ isActive }) =>
+            isActive
+              ? "text-lg font-bold hover:bg-white text-[#5754f7]"
+              : "text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          }
         >
           Instructors
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
+        <NavLink
           to="/classes"
-          className="text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          className={({ isActive }) =>
+            isActive
+              ? "text-lg font-bold hover:bg-white text-[#5754f7]"
+              : "text-lg font-medium hover:bg-white hover:text-[#5754f7]"
+          }
         >
           Classes
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/dashboard"
-          className="text-lg font-medium hover:bg-white hover:text-[#5754f7] lg:mr-12"
-        >
-          Dashboard
-        </Link>
+        </NavLink>
       </li>
       {user ? (
         <>
+          <li>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-lg font-bold hover:bg-white text-[#5754f7] lg:mr-12"
+                  : "text-lg font-medium hover:bg-white hover:text-[#5754f7] lg:mr-12"
+              }
+            >
+              Dashboard
+            </NavLink>
+          </li>
           <button
             onClick={handleLogOut}
             className="border-2 border-black px-4 py-1 rounded-md text-base font-semibold hover:bg-[#111F62] hover:text-white bg-[transparent] text-[black] transition-all"
