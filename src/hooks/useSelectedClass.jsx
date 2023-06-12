@@ -5,7 +5,7 @@ import { AuthContext } from "../providers/AuthProvider";
 const useSelectedClass = () => {
   const { user } = useContext(AuthContext);
 
-  const { refetch, data: cart = [] } = useQuery({
+  const { refetch, data: classesSelected = [] } = useQuery({
     queryKey: ["carts", user?.email],
     queryFn: async () => {
       const res = await fetch(
@@ -15,7 +15,7 @@ const useSelectedClass = () => {
     },
   });
 
-  return [cart, refetch];
+  return [classesSelected, refetch];
 };
 
 export default useSelectedClass;

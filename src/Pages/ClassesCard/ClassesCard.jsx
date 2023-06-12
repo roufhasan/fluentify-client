@@ -20,6 +20,7 @@ const ClassesCard = ({ singleClass }) => {
         instructor_name,
         price,
         email: user.email,
+        image,
       };
       fetch("http://localhost:5000/carts", {
         method: "POST",
