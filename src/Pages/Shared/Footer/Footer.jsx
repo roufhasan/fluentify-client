@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="bg-[#010138] text-white">
+    <div className="bg-[#010138] text-white mt-28">
       <footer className="footer p-10">
         <div>
           <span className="footer-title">Services</span>

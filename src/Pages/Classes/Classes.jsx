@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
+import ClassesCard from "../ClassesCard/ClassesCard";
 
 const Classes = () => {
   const [classes, setClasses] = useState([]);
@@ -11,20 +12,18 @@ const Classes = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap-6 my-12">
-      {classes.map((singleClass) => (
-        <div className="card glass" key={singleClass._id}>
-          <figure>
-            <img src={singleClass.image} alt="car!" className="h-64 w-full" />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{singleClass.name}</h2>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary">Learn now!</button>
-            </div>
-          </div>
-        </div>
-      ))}
+    <div>
+      <h1 className="text-3xl font-semibold text-center mt-8 mb-11">
+        Availabe Classes
+      </h1>
+      <div>
+        {classes.map((singleClass) => (
+          <ClassesCard
+            key={singleClass._id}
+            singleClass={singleClass}
+          ></ClassesCard>
+        ))}
+      </div>
     </div>
   );
 };
