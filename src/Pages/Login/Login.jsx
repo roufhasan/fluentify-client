@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 
 const Login = () => {
@@ -10,6 +10,9 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const { register, handleSubmit } = useForm();
 
@@ -17,7 +20,7 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         if (error.message == "Firebase: Error (auth/user-not-found).") {
@@ -34,7 +37,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((errror) => {
         setError(errror);

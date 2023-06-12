@@ -39,14 +39,14 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink
-              to="/dashboard"
+              to="/dashboard/enrolledClass"
               className={({ isActive }) =>
                 isActive
                   ? "hover:bg-white text-[#5754f7]"
                   : "hover:text-[#5754f7]"
               }
             >
-              <FaBookReader size="18px"></FaBookReader> My Classes
+              <FaBookReader size="18px"></FaBookReader>Enrolled Classes
             </NavLink>
           </li>
           <li>

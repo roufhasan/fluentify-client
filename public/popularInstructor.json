@@ -1,50 +1,38 @@
 [
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "John Smith",
-    "language": "English",
-    "specialization": "Business English",
-    "experience": "10 years",
-    "description": "John is a highly experienced English instructor specializing in Business English. With over 10 years of teaching experience, he has helped numerous professionals improve their English communication skills in a corporate setting. His classes focus on practical language use and effective communication strategies."
+    "_id": "u1",
+    "image": "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=699&q=80",
+    "name": "John Doe",
+    "email": "johndoe@example.com"
   },
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "María García",
-    "language": "Spanish",
-    "specialization": "Conversational Spanish",
-    "experience": "8 years",
-    "description": "María is a passionate Spanish instructor with 8 years of teaching experience. Her specialty is conversational Spanish, helping students develop fluency and confidence in real-life situations. She creates a dynamic and interactive learning environment where students can practice speaking, listening, and cultural understanding."
+    "_id": "u2",
+    "image": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "name": "Jane Smith",
+    "email": "janesmith@example.com"
   },
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "Hiroshi Tanaka",
-    "language": "Japanese",
-    "specialization": "Japanese for Travel",
-    "experience": "6 years",
-    "description": "Hiroshi is a dedicated Japanese instructor with 6 years of teaching experience. He specializes in teaching Japanese for travel purposes, equipping students with essential language skills and cultural knowledge for their trips to Japan. His classes are tailored to the specific needs and interests of each student."
+    "_id": "u3",
+    "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "name": "David Johnson",
+    "email": "davidjohnson@example.com"
   },
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "Fatima Khan",
-    "language": "Arabic",
-    "specialization": "Modern Standard Arabic",
-    "experience": "12 years",
-    "description": "Fatima is a highly skilled Arabic instructor with 12 years of experience. She specializes in teaching Modern Standard Arabic, focusing on all language skills: reading, writing, listening, and speaking. Her interactive and engaging classes ensure students' progress in understanding and using Arabic effectively."
+    "_id": "u4",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "name": "Emily Davis",
+    "email": "emilydavis@example.com"
   },
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "Luisa Rossi",
-    "language": "Italian",
-    "specialization": "Italian Cuisine and Culture",
-    "experience": "5 years",
-    "description": "Luisa is an enthusiastic Italian instructor with a passion for Italian cuisine and culture. With 5 years of teaching experience, she combines language learning with culinary and cultural knowledge. Her classes provide an immersive experience, allowing students to learn Italian while exploring the rich heritage of Italy's food and traditions."
+    "_id": "u5",
+    "image": "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80",
+    "name": "Michael Wilson",
+    "email": "michaelwilson@example.com"
   },
   {
-    "id": "dca6209e-5b21-46f5-bcd5-14f19b85711a",
-    "name": "Carlos Fernández",
-    "language": "French",
-    "specialization": "Academic French",
-    "experience": "9 years",
-    "description": "Carlos is a dedicated French instructor with 9 years of teaching experience. He specializes in teaching academic French, focusing on grammar, writing, and language skills necessary for higher education. Carlos is committed to helping students achieve their language goals and excel in their academic pursuits."
+    "_id": "u6",
+    "image": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+    "name": "Rober Downey JR.",
+    "email": "davidjohnson@example.com"
   }
 ]
