@@ -28,7 +28,11 @@ const Register = () => {
 
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
-            const saveUser = { name: data.name, email: data.email };
+            const saveUser = {
+              name: data.name,
+              email: data.email,
+              image: data.photoURL,
+            };
 
             fetch("http://localhost:5000/users", {
               method: "POST",
@@ -55,7 +59,24 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          image: user.photoURL,
+        };
+
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            navigate("/");
+          });
       })
       .catch((errror) => {
         setError(errror);
