@@ -11,6 +11,7 @@ const Instructors = () => {
   }, []);
   return (
     <div className="overflow-x-auto">
+      <h2>Local Json File theke instructor ansi</h2>
       <table className="table">
         {/* head */}
         <thead>

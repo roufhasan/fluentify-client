@@ -52,7 +52,7 @@ const Dashboard = () => {
     <>
       <li>
         <NavLink
-          to="/dashboard/selectedClass"
+          to="/dashboard/mangageClasses"
           className={({ isActive }) =>
             isActive ? "hover:bg-white text-[#5754f7]" : "hover:text-[#5754f7]"
           }
@@ -62,7 +62,7 @@ const Dashboard = () => {
       </li>
       <li>
         <NavLink
-          to="/dashboard/enrolledClass"
+          to="/dashboard/mangageUsers"
           className={({ isActive }) =>
             isActive ? "hover:bg-white text-[#5754f7]" : "hover:text-[#5754f7]"
           }
@@ -98,63 +98,65 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="drawer lg:drawer-open bg-[#E6E5FF]">
-      <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
-        <Outlet></Outlet>
-        <label
-          htmlFor="my-drawer-2"
-          className="btn btn-primary drawer-button lg:hidden"
-        >
-          Open drawer
-        </label>
-      </div>
-      <div className="drawer-side">
-        <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-80 h-full bg-[#fff] text-base-content">
-          {/* Sidebar content here */}
-          {isAdmin && adminNavigation}
-          {!isAdmin && isInstructor && instructorNavigation}
-          {!isAdmin && !isInstructor && userNavigation}
-          <div className="divider"></div>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "hover:bg-white text-[#5754f7]"
-                  : "hover:text-[#5754f7]"
-              }
-            >
-              <FaHome size="18px"></FaHome> Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/classes"
-              className={({ isActive }) =>
-                isActive
-                  ? "hover:bg-white text-[#5754f7]"
-                  : "hover:text-[#5754f7]"
-              }
-            >
-              <FaChalkboard size="18px"></FaChalkboard> Classes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive
-                  ? "hover:bg-white text-[#5754f7]"
-                  : "hover:text-[#5754f7]"
-              }
-            >
-              <FaChalkboardTeacher size="18px"></FaChalkboardTeacher>{" "}
-              Instructors
-            </NavLink>
-          </li>
-        </ul>
+    <div className="max-w-[1440px] mx-auto">
+      <div className="drawer lg:drawer-open bg-[#E6E5FF]">
+        <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content flex flex-col items-center justify-center">
+          <Outlet></Outlet>
+          <label
+            htmlFor="my-drawer-2"
+            className="btn btn-primary drawer-button lg:hidden"
+          >
+            Open drawer
+          </label>
+        </div>
+        <div className="drawer-side">
+          <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 h-full bg-[#fff] text-base-content">
+            {/* Sidebar content here */}
+            {isAdmin && adminNavigation}
+            {!isAdmin && isInstructor && instructorNavigation}
+            {!isAdmin && !isInstructor && userNavigation}
+            <div className="divider"></div>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hover:bg-white text-[#5754f7]"
+                    : "hover:text-[#5754f7]"
+                }
+              >
+                <FaHome size="18px"></FaHome> Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/classes"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hover:bg-white text-[#5754f7]"
+                    : "hover:text-[#5754f7]"
+                }
+              >
+                <FaChalkboard size="18px"></FaChalkboard> Classes
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive
+                    ? "hover:bg-white text-[#5754f7]"
+                    : "hover:text-[#5754f7]"
+                }
+              >
+                <FaChalkboardTeacher size="18px"></FaChalkboardTeacher>{" "}
+                Instructors
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
