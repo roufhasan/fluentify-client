@@ -7,11 +7,18 @@ import {
   FaWallet,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useInstructor from "../hooks/useInstructor";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   // TODO: Make admin & inststructor dynaimc.
-  const isAdmin = true;
-  const isInstructor = false;
+  // const isAdmin = false;
+
+  const [isAdmin] = useAdmin();
+
+  const [isInstructor] = useInstructor();
+
+  // const isInstructor = false;
 
   const userNavigation = (
     <>
