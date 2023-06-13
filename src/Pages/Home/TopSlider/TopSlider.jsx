@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const TopSlider = () => {
   return (
-    <>
+    <div className="-z-10">
       <Swiper
         spaceBetween={30}
         hashNavigation={{
@@ -25,10 +25,10 @@ const TopSlider = () => {
         modules={[Pagination, Navigation, HashNavigation]}
         className="mySwiper"
       >
-        <SwiperSlide data-hash="slide2">
+        <SwiperSlide data-hash="slide2" className="lg:mt-0">
           <div className="relative">
             <img src={slide2} alt="" />
-            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
+            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full lg:h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
               <p className="text-4xl max-w-6xl mb-10 text-white">
                 Discover the Power of Fluent Communication: Elevate Your
                 Language Skills with Fluentify!
@@ -126,7 +126,7 @@ const TopSlider = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 
