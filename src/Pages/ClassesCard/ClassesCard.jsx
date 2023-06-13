@@ -5,19 +5,21 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useSelectedClass from "../../hooks/useSelectedClass";
 
 const ClassesCard = ({ singleClass }) => {
-  const { image, name, instructor_name, available_seats, price, _id } =
+  const { image, className, instructorName, available_seats, price, _id } =
     singleClass;
   const { user } = useContext(AuthContext);
   const [, refetch] = useSelectedClass();
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(singleClass);
+
   const handleSelectClass = (singleClass) => {
     if (user && user.email) {
       const selectedClass = {
         selectedClassId: _id,
-        name,
-        instructor_name,
+        name: className,
+        instructor_name: instructorName,
         price,
         email: user.email,
         image,
@@ -36,7 +38,7 @@ const ClassesCard = ({ singleClass }) => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: `${singleClass.name} Class has been Selected`,
+              title: `${singleClass.className} Class has been Selected`,
               showConfirmButton: false,
               timer: 1500,
             });
@@ -64,8 +66,8 @@ const ClassesCard = ({ singleClass }) => {
       </div>
       <div className="flex w-full">
         <div className="grow space-y-3">
-          <h3 className="font-bold">{name}</h3>
-          <p className="text-sm text-[#6a6f73]">{instructor_name}</p>
+          <h3 className="font-bold">{className}</h3>
+          <p className="text-sm text-[#6a6f73]">{instructorName}</p>
           <p className="text-[#6a6f73]">Available Seats: {available_seats}</p>
         </div>
         <div className="flex flex-col justify-between items-center">

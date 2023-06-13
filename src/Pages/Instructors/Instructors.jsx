@@ -5,13 +5,15 @@ const Instructors = () => {
   const [instructors, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("popularInstructor.json")
+    fetch("http://localhost:5000/users")
       .then((res) => res.json())
-      .then((data) => setInstructor(data));
+      .then((data) => {
+        const instructor = data.filter((user) => user.role === "instructor");
+        setInstructor(instructor);
+      });
   }, []);
   return (
     <div className="overflow-x-auto">
-      <h2>Local Json File theke instructor ansi</h2>
       <table className="table">
         {/* head */}
         <thead>
