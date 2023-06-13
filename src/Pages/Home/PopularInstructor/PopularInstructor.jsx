@@ -3,10 +3,20 @@ import { useEffect, useState } from "react";
 const PopularInstructor = () => {
   const [instructors, setInstructor] = useState([]);
 
+  // const myInstructors = instructors.filter(
+  //   (instructor) => instructor.role === "instructor"
+  // );
+  // console.log(myInstructors);
+
   useEffect(() => {
-    fetch("popularInstructor.json")
+    fetch("http://localhost:5000/users")
       .then((res) => res.json())
-      .then((data) => setInstructor(data));
+      .then((data) => {
+        const instructor = data.filter(
+          (instructor) => instructor.role === "instructor"
+        );
+        setInstructor(instructor);
+      });
   }, []);
   return (
     <div>
