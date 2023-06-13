@@ -9,16 +9,12 @@ import {
 import { NavLink, Outlet } from "react-router-dom";
 import useInstructor from "../hooks/useInstructor";
 import useAdmin from "../hooks/useAdmin";
+import { HiOutlineCollection, HiOutlineFolderAdd } from "react-icons/hi";
 
 const Dashboard = () => {
-  // TODO: Make admin & inststructor dynaimc.
-  // const isAdmin = false;
-
   const [isAdmin] = useAdmin();
 
   const [isInstructor] = useInstructor();
-
-  // const isInstructor = false;
 
   const userNavigation = (
     <>
@@ -59,7 +55,7 @@ const Dashboard = () => {
     <>
       <li>
         <NavLink
-          to="/dashboard/mangageClasses"
+          to="/dashboard/manageClasses"
           className={({ isActive }) =>
             isActive ? "hover:bg-white text-[#5754f7]" : "hover:text-[#5754f7]"
           }
@@ -83,22 +79,22 @@ const Dashboard = () => {
     <>
       <li>
         <NavLink
-          to="/dashboard/selectedClass"
+          to="/dashboard/addClass"
           className={({ isActive }) =>
             isActive ? "hover:bg-white text-[#5754f7]" : "hover:text-[#5754f7]"
           }
         >
-          <FaShoppingCart size="18px"></FaShoppingCart> Add Class
+          <HiOutlineFolderAdd size="24px"></HiOutlineFolderAdd> Add Class
         </NavLink>
       </li>
       <li>
         <NavLink
-          to="/dashboard/enrolledClass"
+          to="/dashboard/myClasses"
           className={({ isActive }) =>
             isActive ? "hover:bg-white text-[#5754f7]" : "hover:text-[#5754f7]"
           }
         >
-          <FaBookReader size="18px"></FaBookReader>My Classes
+          <HiOutlineCollection size="24px"></HiOutlineCollection>My Classes
         </NavLink>
       </li>
     </>

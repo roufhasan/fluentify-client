@@ -11,6 +11,12 @@ import EnrolledClass from "../Pages/Dashboard/EnrolledClass/EnrolledClass";
 import Classes from "../Pages/Classes/Classes";
 import Instructors from "../Pages/Instructors/Instructors";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
+import AddClass from "../Pages/Dashboard/AddClass/AddClass";
+import InstructorRoute from "./InstructorRoute";
+import MyClasses from "../Pages/Dashboard/MyClasses/MyClasses";
+import AdminRoute from "./AdminRoute";
+import MangeClasses from "../Pages/Dashboard/ManageClasses/MangeClasses";
+import UserRoute from "./UserRoute";
 
 const router = createBrowserRouter([
   {
@@ -50,15 +56,51 @@ const router = createBrowserRouter([
     children: [
       {
         path: "selectedClass",
-        element: <SelectedClass></SelectedClass>,
+        element: (
+          <UserRoute>
+            <SelectedClass></SelectedClass>
+          </UserRoute>
+        ),
       },
       {
         path: "enrolledClass",
-        element: <EnrolledClass></EnrolledClass>,
+        element: (
+          <UserRoute>
+            <EnrolledClass></EnrolledClass>
+          </UserRoute>
+        ),
       },
       {
         path: "mangageUsers",
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <AdminRoute>
+            <ManageUsers></ManageUsers>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageClasses",
+        element: (
+          <AdminRoute>
+            <MangeClasses></MangeClasses>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "addClass",
+        element: (
+          <InstructorRoute>
+            <AddClass></AddClass>
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "myClasses",
+        element: (
+          <InstructorRoute>
+            <MyClasses></MyClasses>
+          </InstructorRoute>
+        ),
       },
     ],
   },

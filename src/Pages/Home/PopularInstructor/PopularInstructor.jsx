@@ -3,11 +3,6 @@ import { useEffect, useState } from "react";
 const PopularInstructor = () => {
   const [instructors, setInstructor] = useState([]);
 
-  // const myInstructors = instructors.filter(
-  //   (instructor) => instructor.role === "instructor"
-  // );
-  // console.log(myInstructors);
-
   useEffect(() => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
