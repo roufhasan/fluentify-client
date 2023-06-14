@@ -147,7 +147,7 @@ const Dashboard = () => {
             </li>
             <li>
               <NavLink
-                to="/"
+                to="/instructors"
                 className={({ isActive }) =>
                   isActive
                     ? "hover:bg-white text-[#5754f7]"

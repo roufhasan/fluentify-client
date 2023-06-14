@@ -1,7 +1,30 @@
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import MyClassesCard from "../MyClassesCard/MyClassesCard";
+
 const MyClasses = () => {
+  const { user } = useContext(AuthContext);
+
+  const [myClasses, setMyClasses] = useState([]);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/myClasses?email=${user.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setMyClasses(data);
+      });
+  }, [user?.email]);
+
   return (
-    <div>
-      <h2>My Classes Wil Be Here</h2>
+    <div className="w-[90%]">
+      <h2 className="text-3xl font-semibold text-center mb-10">
+        My Total Classes: {myClasses.length}
+      </h2>
+      <div>
+        {myClasses.map((myClass) => (
+          <MyClassesCard key={myClass._id} myClass={myClass}></MyClassesCard>
+        ))}
+      </div>
     </div>
   );
 };
