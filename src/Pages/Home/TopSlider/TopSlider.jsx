@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const TopSlider = () => {
   return (
-    <div className="-z-10">
+    <div className="-z-10 mt-64 sm:mt-0">
       <Swiper
         spaceBetween={30}
         hashNavigation={{
@@ -29,7 +29,7 @@ const TopSlider = () => {
           <div className="relative">
             <img src={slide2} alt="" />
             <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full lg:h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
-              <p className="text-4xl max-w-6xl mb-10 text-white">
+              <p className="md:text-4xl max-w-6xl mb-10 text-white">
                 Discover the Power of Fluent Communication: Elevate Your
                 Language Skills with Fluentify!
               </p>
@@ -54,7 +54,7 @@ const TopSlider = () => {
           <div className="relative">
             <img src={slide1} alt="" />
             <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
-              <p className="text-4xl max-w-6xl mb-10 text-white">
+              <p className="md:text-4xl max-w-6xl mb-10 text-white">
                 Embark on a Journey of Language Mastery with Fluentify: Your
                 Path to Fluency Starts Here!
               </p>
@@ -79,7 +79,7 @@ const TopSlider = () => {
           <div className="relative">
             <img src={slide3} alt="" />
             <div className="absolute top-0 left-0 bg-gradient-to-r from-[#00000050] to-[#00000048] w-full h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
-              <p className="text-4xl max-w-6xl mb-10 text-white">
+              <p className="md:text-4xl max-w-6xl mb-10 text-white">
                 Unleash the Linguistic Hero Within: Fluentify - Your Supercharge
                 for Language Proficiency!
               </p>
@@ -104,7 +104,7 @@ const TopSlider = () => {
           <div className="relative">
             <img src={slide4} alt="" />
             <div className="absolute top-0 left-0 bg-gradient-to-r from-[#00000059] to-[#00000042] w-full h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
-              <p className="text-4xl max-w-6xl mb-10 text-white">
+              <p className="md:text-4xl max-w-6xl mb-10 text-white">
                 Empower Yourself with Language Fluency: Fluentify - Your Gateway
                 to Multilingual Success!
               </p>
