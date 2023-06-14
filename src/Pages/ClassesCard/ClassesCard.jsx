@@ -58,7 +58,11 @@ const ClassesCard = ({ singleClass }) => {
     }
   };
   return (
-    <div className="flex gap-6 border-b border-[#d1d7dc] py-4">
+    <div
+      className={`flex gap-6 border-b border-[#d1d7dc] py-4 ${
+        available_seats === 0 && "bg-red-600 text-white"
+      }`}
+    >
       <div>
         <img src={image} alt="" className="w-64 h-36 object-cover" />
       </div>
