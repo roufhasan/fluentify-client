@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Bounce, Fade, Flip, Roll, Slide } from "react-awesome-reveal";
+import { Fade, Slide } from "react-awesome-reveal";
 
 const PopularClasse = () => {
   const [classes, setClasses] = useState([]);
@@ -11,14 +11,17 @@ const PopularClasse = () => {
   }, []);
 
   return (
-    <div>
+    <div className="my-32">
       <Fade>
-        <h2 className="text-4xl font-semibold text-blue-700 text-center my-28">
+        <h3 className="text-center font-semibold text-[#6a6f73]">
+          Our Top Classes
+        </h3>
+        <h2 className="text-4xl font-semibold text-center text-blue-700">
           Popular Classes
         </h2>
       </Fade>
       <Slide>
-        <div className="grid grid-cols-3 gap-6 my-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-12">
           {classes.map((singleClass) => (
             <div
               className="border shadow-xl shadow-[#5754f7]/30"
