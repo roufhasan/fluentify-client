@@ -8,7 +8,12 @@ const Classes = () => {
   useEffect(() => {
     fetch("http://localhost:5000/classes")
       .then((res) => res.json())
-      .then((data) => setClasses(data));
+      .then((data) => {
+        const apprevedClasses = data.filter(
+          (singleClass) => singleClass.status === "approved"
+        );
+        setClasses(apprevedClasses);
+      });
   }, []);
 
   return (

@@ -21,10 +21,9 @@ const PopularClasse = () => {
               <img src={singleClass.image} alt="car!" className="h-64 w-full" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">{singleClass.name}</h2>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Learn now!</button>
-              </div>
+              <h2 className="card-title">{singleClass.className}</h2>
+              <h2 className="">Instructor: {singleClass.instructorName}</h2>
+              <p>Price: ${singleClass.price}</p>
             </div>
           </div>
         ))}

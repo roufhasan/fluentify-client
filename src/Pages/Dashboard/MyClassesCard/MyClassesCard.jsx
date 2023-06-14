@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const MyClassesCard = ({ myClass }) => {
   const {
     image,
@@ -5,7 +7,6 @@ const MyClassesCard = ({ myClass }) => {
     instructorName,
     available_seats,
     price,
-    _id,
     enrolled_student,
     status,
   } = myClass;
@@ -32,9 +33,12 @@ const MyClassesCard = ({ myClass }) => {
           >
             {status}
           </p>
-          <button className="btn btn-outline bg-black text-white">
+          <Link
+            to="/dashboard/updateClasses"
+            className="btn btn-outline bg-black text-white"
+          >
             Update
-          </button>
+          </Link>
         </div>
       </div>
     </div>

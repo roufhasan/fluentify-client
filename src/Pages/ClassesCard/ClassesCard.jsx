@@ -12,8 +12,6 @@ const ClassesCard = ({ singleClass }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(singleClass);
-
   const handleSelectClass = (singleClass) => {
     if (user && user.email) {
       const selectedClass = {
