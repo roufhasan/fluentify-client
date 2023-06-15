@@ -23,4 +23,4 @@
 
 ## Live Site
 
-- [Fluentify](https://www.github.com/octokatherine)
+- [Visit Fluentify](https://fluentify-4bc36.web.app/)
