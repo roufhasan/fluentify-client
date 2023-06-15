@@ -14,7 +14,9 @@ const PaymentHistory = () => {
   }, [user?.email]);
   return (
     <div className="w-[90%]">
-      <h2>Payment History</h2>
+      <h2 className="text-3xl font-semibold text-center mb-10 mt-14">
+        Payment History
+      </h2>
       <div className="overflow-x-auto">
         <table className="table">
           <thead>

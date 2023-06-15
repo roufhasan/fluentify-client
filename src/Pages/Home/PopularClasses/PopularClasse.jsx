@@ -30,8 +30,8 @@ const PopularClasse = () => {
               <figure>
                 <img
                   src={singleClass.image}
-                  alt="car!"
-                  className="h-64 w-full"
+                  alt=""
+                  className="h-64 w-full object-cover"
                 />
               </figure>
               <div className="px-3 pb-5 pt-10">

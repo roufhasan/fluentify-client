@@ -35,7 +35,9 @@ const MangeClasses = () => {
 
   return (
     <div className="w-[90%]">
-      <h1>Mange Class Will Be here</h1>
+      <h2 className="text-3xl font-semibold text-center mb-10 mt-14">
+        Manage Class
+      </h2>
       {classes.map((singleClass) => (
         <div
           key={singleClass._id}

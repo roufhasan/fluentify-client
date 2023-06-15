@@ -14,7 +14,7 @@ import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Dashboard = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const [isAdmin] = useAdmin();
 
@@ -105,17 +105,11 @@ const Dashboard = () => {
     </>
   );
 
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {})
-      .catch((error) => console.log(error));
-  };
-
   return (
     <div className="max-w-[1440px] mx-auto">
       <div className="drawer lg:drawer-open bg-[#F8F9FA]">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content flex flex-col items-center justify-center">
+        <div className="drawer-content flex flex-col items-center">
           <Outlet></Outlet>
           <label
             htmlFor="my-drawer-2"
@@ -126,7 +120,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-[#fff] text-base-content relative">
+          <ul className="menu p-4 w-80 h-full bg-[#fff] text-base-content">
             {/* Sidebar content here */}
             {user && (
               <div className="flex gap-x-3">
@@ -183,12 +177,6 @@ const Dashboard = () => {
                 Instructors
               </NavLink>
             </li>
-            <button
-              onClick={handleLogOut}
-              className="w-[30%] border-2 border-black px-4 py-1 rounded-md text-base font-semibold hover:bg-[#000] hover:text-white bg-[transparent] text-[black] transition-all absolute bottom-[3%]"
-            >
-              Log Out
-            </button>
           </ul>
         </div>
       </div>

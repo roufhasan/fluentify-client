@@ -6,7 +6,7 @@ import { Elements } from "@stripe/react-stripe-js";
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
   const classDetails = useLoaderData();
-  const price = parseFloat(classDetails.price.toFixed(2));
+  const price = parseInt(classDetails.price);
   console.log(price);
   return (
     <div className="w-[90%]">

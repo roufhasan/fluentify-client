@@ -31,8 +31,8 @@ const SelectedClass = () => {
   };
   return (
     <div className="w-full">
-      <h2 className="text-3xl font-semibold text-center">
-        My Seletected Class {classesSelected.length}
+      <h2 className="text-3xl font-semibold text-center mb-10 mt-14">
+        My Seletected Class
       </h2>
       <div className="overflow-x-auto">
         <table className="table">

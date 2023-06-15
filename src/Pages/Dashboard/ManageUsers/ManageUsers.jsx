@@ -35,8 +35,8 @@ const ManageUsers = () => {
 
   return (
     <div className="w-full">
-      <h2 className="text-3xl font-semibold text-center">
-        Manage Users {users.length}
+      <h2 className="text-3xl font-semibold text-center mb-10 mt-14">
+        Manage Users
       </h2>
       <div className="overflow-x-auto">
         <table className="table">
