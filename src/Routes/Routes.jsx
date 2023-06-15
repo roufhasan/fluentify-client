@@ -19,6 +19,7 @@ import MangeClasses from "../Pages/Dashboard/ManageClasses/MangeClasses";
 import UserRoute from "./UserRoute";
 import UpdateClasses from "../Pages/Dashboard/UpdateClasses/UpdateClasses";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +70,14 @@ const router = createBrowserRouter([
         element: (
           <UserRoute>
             <EnrolledClass></EnrolledClass>
+          </UserRoute>
+        ),
+      },
+      {
+        path: "paymentHistory",
+        element: (
+          <UserRoute>
+            <PaymentHistory></PaymentHistory>
           </UserRoute>
         ),
       },

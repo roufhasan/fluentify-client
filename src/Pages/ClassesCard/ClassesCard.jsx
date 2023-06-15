@@ -59,8 +59,8 @@ const ClassesCard = ({ singleClass }) => {
   };
   return (
     <div
-      className={`flex gap-6 border-b border-[#d1d7dc] py-4 ${
-        available_seats === 0 && "bg-red-600 text-white"
+      className={`flex gap-6 border-b border-[#d1d7dc] p-4 ${
+        available_seats === 0 && "bg-[#ff615d]"
       }`}
     >
       <div>
@@ -69,13 +69,26 @@ const ClassesCard = ({ singleClass }) => {
       <div className="flex w-full">
         <div className="grow space-y-3">
           <h3 className="font-bold">{className}</h3>
-          <p className="text-sm text-[#6a6f73]">{instructorName}</p>
-          <p className="text-[#6a6f73]">Available Seats: {available_seats}</p>
+          <p
+            className={`text-[#6a6f73] ${
+              available_seats === 0 && "text-black"
+            }`}
+          >
+            {instructorName}
+          </p>
+          <p
+            className={`text-[#6a6f73] ${
+              available_seats === 0 && "text-black"
+            }`}
+          >
+            Available Seats: {available_seats}
+          </p>
         </div>
         <div className="flex flex-col justify-between items-center">
           <p className="font-bold text-right">${price}</p>
           <button
             onClick={() => handleSelectClass(singleClass)}
+            disabled={available_seats === 0}
             className="btn btn-outline bg-black text-white"
           >
             Select
