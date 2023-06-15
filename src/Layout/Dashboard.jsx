@@ -113,7 +113,7 @@ const Dashboard = () => {
 
   return (
     <div className="max-w-[1440px] mx-auto">
-      <div className="drawer lg:drawer-open bg-[#E6E5FF]">
+      <div className="drawer lg:drawer-open bg-[#F8F9FA]">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-center">
           <Outlet></Outlet>
