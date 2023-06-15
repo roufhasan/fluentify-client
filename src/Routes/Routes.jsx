@@ -18,6 +18,7 @@ import AdminRoute from "./AdminRoute";
 import MangeClasses from "../Pages/Dashboard/ManageClasses/MangeClasses";
 import UserRoute from "./UserRoute";
 import UpdateClasses from "../Pages/Dashboard/UpdateClasses/UpdateClasses";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,16 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "payment/:id",
+        element: (
+          <UserRoute>
+            <Payment></Payment>
+          </UserRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/classes/${params.id}`),
+      },
+      {
         path: "mangageUsers",
         element: (
           <AdminRoute>
@@ -104,12 +115,14 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "updateClasses",
+        path: "updateClasses/:id",
         element: (
           <InstructorRoute>
             <UpdateClasses></UpdateClasses>
           </InstructorRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/classes/${params.id}`),
       },
     ],
   },

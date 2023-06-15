@@ -9,6 +9,7 @@ const MyClassesCard = ({ myClass }) => {
     price,
     enrolled_student,
     status,
+    _id,
   } = myClass;
   return (
     <div className="flex gap-6 border-b border-[#d1d7dc] py-4">
@@ -34,7 +35,7 @@ const MyClassesCard = ({ myClass }) => {
             {status}
           </p>
           <Link
-            to="/dashboard/updateClasses"
+            to={`/dashboard/updateClasses/${_id}`}
             className="btn btn-outline bg-black text-white"
           >
             Update

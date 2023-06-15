@@ -1,5 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
+
 const UpdateClasses = () => {
-  //   const classes = useLoaderData();
+  const classes = useLoaderData();
 
   const handleUpdateClasses = (event) => {
     event.preventDefault();
@@ -11,12 +14,32 @@ const UpdateClasses = () => {
     const price = parseFloat(form.price.value);
     const available_seats = parseInt(form.available_seats.value);
 
-    const UpdateToy = {
+    const UpdateClass = {
       className,
       price,
       available_seats,
     };
-    console.log(UpdateToy);
+
+    fetch(`http://localhost:5000/updateClasses/${classes._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(UpdateClass),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Class Updated Succesfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          form.reset();
+        }
+      });
   };
 
   return (
@@ -34,6 +57,7 @@ const UpdateClasses = () => {
             <input
               type="text"
               name="className"
+              defaultValue={classes.className}
               placeholder="Class Name"
               className="pl-4 h-12 focus:outline-blue-500   border-gray-600 border rounded"
             />
@@ -45,6 +69,7 @@ const UpdateClasses = () => {
             <input
               type="text"
               name="price"
+              defaultValue={classes.price}
               placeholder="price"
               className="pl-4 h-12 focus:outline-blue-500   border-gray-600 border rounded"
             />
@@ -56,6 +81,7 @@ const UpdateClasses = () => {
             <input
               type="text"
               name="available_seats"
+              defaultValue={classes.available_seats}
               placeholder="Available Seats"
               className="pl-4 h-12 focus:outline-blue-500   border-gray-600 border rounded"
             />
