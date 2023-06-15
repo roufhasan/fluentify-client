@@ -23,9 +23,6 @@ const Register = () => {
     }
     createUser(data.email, data.password)
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
-
         updateUserProfile(data.name, data.photoURL)
           .then(() => {
             const saveUser = {
@@ -34,7 +31,7 @@ const Register = () => {
               image: data.photoURL,
             };
 
-            fetch("http://localhost:5000/users", {
+            fetch("https://fluentify-server.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -58,7 +55,6 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
 
         const saveUser = {
           name: user.displayName,
@@ -66,7 +62,7 @@ const Register = () => {
           image: user.photoURL,
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://fluentify-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

@@ -7,6 +7,8 @@
 - Add class by instructor
 - Admin approve or deny class
 - Make user admin or instructor
+- Payment For Selected Class
+- See Payment History
 
 ## 🚀 Used packages
 
@@ -16,6 +18,8 @@
 - Axios
 - React Awesome Reveal
 - Framer Motion
+- MongoDB
+- Stripe
 
 ## Live Site
 

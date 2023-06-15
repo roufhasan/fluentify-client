@@ -6,7 +6,7 @@ const EnrolledClass = () => {
   const [enrolledClasses, setEnrolledClass] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payment?email=${user.email}`)
+    fetch(`https://fluentify-server.vercel.app/payment?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setEnrolledClass(data);
@@ -15,7 +15,7 @@ const EnrolledClass = () => {
   return (
     <div className="w-[90%]">
       <h2 className="text-3xl font-semibold text-center mb-10 mt-14">
-        Enrolled Class
+        Toal Enrolled Class {enrolledClasses.length}
       </h2>
       <div>
         {enrolledClasses.map((enrolledClass) => (

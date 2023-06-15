@@ -20,7 +20,7 @@ const UpdateClasses = () => {
       available_seats,
     };
 
-    fetch(`http://localhost:5000/updateClasses/${classes._id}`, {
+    fetch(`https://fluentify-server.vercel.app/updateClasses/${classes._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

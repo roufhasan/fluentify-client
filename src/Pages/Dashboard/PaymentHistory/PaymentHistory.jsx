@@ -6,7 +6,7 @@ const PaymentHistory = () => {
   const [myPayments, setMyPayments] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payment?email=${user.email}`)
+    fetch(`https://fluentify-server.vercel.app/payment?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyPayments(data);

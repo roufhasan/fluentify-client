@@ -5,7 +5,6 @@ import { AuthContext } from "../../../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const CheckOutForm = ({ price, classDetails }) => {
-  console.log(classDetails);
   const { user } = useContext(AuthContext);
   const stripe = useStripe();
   const elements = useElements();
@@ -17,7 +16,6 @@ const CheckOutForm = ({ price, classDetails }) => {
 
   useEffect(() => {
     axiosSecure.post("/create-payment-intent", { price }).then((res) => {
-      console.log(res.data.clientSecret);
       setClientSecret(res.data.clientSecret);
     });
   }, [price, axiosSecure]);
@@ -38,7 +36,6 @@ const CheckOutForm = ({ price, classDetails }) => {
       card,
     });
     if (error) {
-      console.log("error", error);
       setCardError(error.message);
     } else {
       setCardError("");
@@ -60,7 +57,6 @@ const CheckOutForm = ({ price, classDetails }) => {
       console.log(confirmError);
     }
 
-    console.log(paymentIntent);
     setProcessing(false);
     if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);

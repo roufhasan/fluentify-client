@@ -7,7 +7,6 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
   const classDetails = useLoaderData();
   const price = parseInt(classDetails.price);
-  console.log(price);
   return (
     <div className="w-[90%]">
       <h2 className="text-3xl font-semibold text-center mb-28">Payment</h2>

@@ -28,7 +28,7 @@ const TopSlider = () => {
         <SwiperSlide data-hash="slide2" className="lg:mt-0">
           <div className="relative">
             <img src={slide2} alt="" />
-            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full lg:h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
+            <div className="absolute top-0 left-0 bg-gradient-to-r from-[#0000008c] to-[#0000005b] w-full h-full  uppercase font-semibold text-center flex flex-col items-center justify-center">
               <p className="md:text-4xl max-w-6xl mb-10 text-white">
                 Discover the Power of Fluent Communication: Elevate Your
                 Language Skills with Fluentify!

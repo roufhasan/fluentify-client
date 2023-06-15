@@ -19,7 +19,6 @@ const Login = () => {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then((result) => {
-        console.log(result);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -36,7 +35,6 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
-        console.log(user);
 
         const saveUser = {
           name: user.displayName,
@@ -44,7 +42,7 @@ const Login = () => {
           image: user.photoURL,
         };
 
-        fetch("http://localhost:5000/users", {
+        fetch("https://fluentify-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
