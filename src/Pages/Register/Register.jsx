@@ -31,7 +31,7 @@ const Register = () => {
               image: data.photoURL,
             };
 
-            fetch("https://fluentify-server.vercel.app/users", {
+            fetch("https://fluentify.up.railway.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -62,7 +62,7 @@ const Register = () => {
           image: user.photoURL,
         };
 
-        fetch("https://fluentify-server.vercel.app/users", {
+        fetch("https://fluentify.up.railway.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

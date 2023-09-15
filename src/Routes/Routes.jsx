@@ -89,7 +89,7 @@ const router = createBrowserRouter([
           </UserRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://fluentify-server.vercel.app/classes/${params.id}`),
+          fetch(`https://fluentify.up.railway.app/classes/${params.id}`),
       },
       {
         path: "mangageUsers",
@@ -131,7 +131,7 @@ const router = createBrowserRouter([
           </InstructorRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://fluentify-server.vercel.app/classes/${params.id}`),
+          fetch(`https://fluentify.up.railway.app/classes/${params.id}`),
       },
     ],
   },

@@ -5,7 +5,7 @@ const PopularInstructor = () => {
   const [instructors, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("https://fluentify-server.vercel.app/users/topinstructor")
+    fetch("https://fluentify.up.railway.app/users/topinstructor")
       .then((res) => res.json())
       .then((data) => {
         const instructor = data.filter(

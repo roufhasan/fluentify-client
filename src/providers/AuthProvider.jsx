@@ -52,7 +52,7 @@ const AuthProvider = ({ children }) => {
 
       if (currentUser) {
         axios
-          .post("https://fluentify-server.vercel.app/jwt", {
+          .post("https://fluentify.up.railway.app/jwt", {
             email: currentUser.email,
           })
           .then((data) => {

@@ -19,6 +19,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signIn(data.email, data.password)
       .then((result) => {
+        console.log(result);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -42,7 +43,7 @@ const Login = () => {
           image: user.photoURL,
         };
 
-        fetch("https://fluentify-server.vercel.app/users", {
+        fetch("https://fluentify.up.railway.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

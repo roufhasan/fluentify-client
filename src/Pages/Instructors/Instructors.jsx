@@ -5,7 +5,7 @@ const Instructors = () => {
   const [instructors, setInstructor] = useState([]);
 
   useEffect(() => {
-    fetch("https://fluentify-server.vercel.app/users")
+    fetch("https://fluentify.up.railway.app/users")
       .then((res) => res.json())
       .then((data) => {
         const instructor = data.filter((user) => user.role === "instructor");

@@ -22,7 +22,7 @@ const ClassesCard = ({ singleClass }) => {
         email: user.email,
         image,
       };
-      fetch("https://fluentify-server.vercel.app/carts", {
+      fetch("https://fluentify.up.railway.app/carts", {
         method: "POST",
         headers: {
           "content-type": "application/json",

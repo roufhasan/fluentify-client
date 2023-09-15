@@ -3,13 +3,13 @@ import Swal from "sweetalert2";
 
 const MangeClasses = () => {
   const { data: classes = [], refetch } = useQuery(["classes"], async () => {
-    const res = await fetch("https://fluentify-server.vercel.app/classes");
+    const res = await fetch("https://fluentify.up.railway.app/classes");
     return res.json();
   });
 
   const handleClassApprove = (singleClass) => {
     fetch(
-      `https://fluentify-server.vercel.app/classes/approved/${singleClass._id}`,
+      `https://fluentify.up.railway.app/classes/approved/${singleClass._id}`,
       {
         method: "PATCH",
       }
@@ -25,7 +25,7 @@ const MangeClasses = () => {
 
   const handleClassDenied = (singleClass) => {
     fetch(
-      `https://fluentify-server.vercel.app/classes/denied/${singleClass._id}`,
+      `https://fluentify.up.railway.app/classes/denied/${singleClass._id}`,
       {
         method: "PATCH",
       }

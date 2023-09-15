@@ -6,7 +6,7 @@ const Classes = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch("https://fluentify-server.vercel.app/classes")
+    fetch("https://fluentify.up.railway.app/classes")
       .then((res) => res.json())
       .then((data) => {
         const apprevedClasses = data.filter(

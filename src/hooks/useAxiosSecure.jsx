@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const axiosSecure = axios.create({
-  baseURL: "https://fluentify-server.vercel.app",
+  baseURL: "https://fluentify.up.railway.app",
 });
 
 const useAxiosSecure = () => {

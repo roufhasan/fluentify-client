@@ -10,7 +10,7 @@ const useSelectedClass = () => {
     queryKey: ["carts", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `https://fluentify-server.vercel.app/carts?email=${user.email}`,
+        `https://fluentify.up.railway.app/carts?email=${user.email}`,
         {
           headers: {
             authorization: `bearer ${token}`,

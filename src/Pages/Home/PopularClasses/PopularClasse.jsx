@@ -5,7 +5,7 @@ const PopularClasse = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch("https://fluentify-server.vercel.app/classes/sort")
+    fetch("https://fluentify.up.railway.app/classes/sort")
       .then((res) => res.json())
       .then((data) => setClasses(data));
   }, []);

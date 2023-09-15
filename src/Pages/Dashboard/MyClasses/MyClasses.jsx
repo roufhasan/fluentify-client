@@ -8,7 +8,7 @@ const MyClasses = () => {
   const [myClasses, setMyClasses] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fluentify-server.vercel.app/myClasses?email=${user.email}`)
+    fetch(`https://fluentify.up.railway.app/myClasses?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyClasses(data);
